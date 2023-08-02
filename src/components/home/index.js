@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import "./index.css";
-import img01 from "D:/Learning/Projects/React_basic/my-demo/src/img01.jpg";
-
 
 class Home extends Component{
     render(){

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Menu } from 'antd';
 import {Link} from 'react-router-dom'
-import img01 from "D:/Learning/Projects/React_basic/my-demo/src/img01.jpg";
+import img01 from "../../img01.jpg";
 import './index.css';
 import MenuConfig from '../../components/config/menuConfig'
 
