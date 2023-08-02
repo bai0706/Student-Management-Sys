@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import {BrowserRouter,Route} from "react-router-dom";
-import Home from './components/home';
-
+import Home from './components/views/Home';
 import App from './App'
 import Admin from './admin';
-import StudentList from './components/Student';
-import Classes from './components/classes';
+import StudentList from './components/content/Student';
+import Classes from './components/content/Classes';
 
 
 class IRouter extends Component {

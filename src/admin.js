@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import {Row, Col} from 'antd';
-import NavLeft from "./components/navleft";
+import SideMenu from "./components/views/SideMenu"
 
 import "./style/common.css"
-import Classes from './components/classes';
 
 class Admin extends Component{
     render(){
@@ -11,7 +10,7 @@ class Admin extends Component{
             <div>
                 <Row className='container'>
                     <Col span={3} className='nav-left'>
-                        <NavLeft></NavLeft>
+                        <SideMenu />
                     </Col>
                     <Col span={21} className='main'>
                         <Row className='content'>

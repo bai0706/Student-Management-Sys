@@ -1,7 +1,7 @@
-import React, { Children, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button,Breadcrumb, theme, Table,Layout, Space, Modal  } from 'antd';
 import axios from 'axios';
-import MyForm from '../myForm';
+import MyForm from '../forms/MyForm';
 import moment from 'moment';
 
 
@@ -22,7 +22,7 @@ export default function StudentList(){
    
     // 展示数据
     useEffect(() => {
-      axios.get('http://localhost:8000/StudentList').then(
+      axios.get('http://localhost:3000/StudentList').then(
         res => {
           setDataSource(res.data)
         }
@@ -97,14 +97,14 @@ export default function StudentList(){
   //删除
     const deleteMethod = (item) => {
         setDataSource(dataSource.filter(data=>data.id!==item.id))
-        axios.delete(`http://localhost:8000/StudentList/${item.id}`)
+        axios.delete(`http://localhost:3000/StudentList/${item.id}`)
     }
 
     const addFormOK = () => {
       addForm.current.validateFields().then(value => {
         setIsAddVisible(false)
         console.log(value)
-        axios.post("http://localhost:8000/StudentList",{...value,})
+        axios.post("http://localhost:3000/StudentList",{...value,})
         window.location.reload();
       }).catch(err => {
         console.log(err)
@@ -122,7 +122,7 @@ export default function StudentList(){
          setDataSource(dataSource.map(item=>{
            return item.data
          }))
-         axios.patch(`http://localhost:8000/StudentList/${current.id}`, value)
+         axios.patch(`http://localhost:3000/StudentList/${current.id}`, value)
          window.location.reload();
       })
     }
@@ -186,7 +186,7 @@ export default function StudentList(){
               }}
           >
             
-            <Button className='button-style' style={{marginRight:15,marginLeft:-1300,marginBottom:20}} type="primary" onClick={() =>{setIsAddVisible(true)}}>
+            <Button style={{marginRight:15,marginLeft:-1300,marginBottom:20}} type="primary" onClick={() =>{setIsAddVisible(true)}}>
               新增
             </Button>
             <Button className='button-style' type="primary" onClick={() =>{handleConvertToTxt(true)}}>导出</Button>

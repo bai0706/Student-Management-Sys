@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Menu } from 'antd';
 import {Link} from 'react-router-dom'
-import img01 from "../../img01.jpg";
-import './index.css';
-import MenuConfig from '../../components/config/menuConfig'
+import img01 from "../img/img01.jpg";
+import MenuConfig from '../config/menuConfig'
 
-class NavLeft extends Component{
+class SideMenu extends Component{
 
     state={
         menuTree:[],
@@ -36,7 +35,7 @@ class NavLeft extends Component{
         return(
             <div>
                 <li>
-                    <img className='img-style' src = {img01} ></img>
+                    <img style={{height: 80,  width: 80}} src = {img01} ></img>
                 </li>
                 <li>
                      <Menu theme='dark' mode='inline'>{this.state.menuTree}</Menu>
@@ -45,5 +44,5 @@ class NavLeft extends Component{
         );    
     }
 }
-export default NavLeft;
+export default SideMenu;
 

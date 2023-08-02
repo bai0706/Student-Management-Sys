@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Breadcrumb, Button, Layout, Table, theme } from 'antd';
 import axios from 'axios';
-import '../../App.css'
-import SearchForm from '../searchForm/index';
+import SearchForm from '../forms/SearchForm';
 
 const { Content, Footer} = Layout;
 
@@ -35,7 +34,7 @@ function Classes () {
     }
   ]
   useEffect(()=>{
-    axios.get("http://localhost:8000/classes").then(res=>{
+    axios.get("http://localhost:3000/classes").then(res=>{
       setDataSource(res.data)
     })
   },[])

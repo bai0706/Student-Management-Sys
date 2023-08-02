@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import "./index.css";
+import "../../style/common.css"
 
 class Home extends Component{
     render(){
         return(
         <div>
-            <p className='font-size'>欢迎访问系统</p>
+            <p className='home-style'>欢迎访问学生教学管理系统</p>
         </div>
         );
     }
