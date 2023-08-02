@@ -1,0 +1,66 @@
+{
+  "StudentList": [
+    {
+      "id": 1,
+      "name": "谷雨",
+      "birthday": "2014-06-13",
+      "gender": "女",
+      "address": "桃园5栋101",
+      "parentName": "谷柳",
+      "parentPhoneNum": "138xxxx1234",
+      "grade": "一年级",
+      "classes": "二班"
+    },
+    {
+      "id": 2,
+      "name": "星语",
+      "birthday": "2016-06-13",
+      "gender": "女",
+      "address": "菊园2栋303",
+      "parentName": "星启",
+      "parentPhoneNum": "138xxxx1234",
+      "grade": "一年级",
+      "classes": "一班"
+    },
+    {
+      "name": "叶玫",
+      "birthday": "2015-06-13",
+      "address": "梅园1栋103",
+      "gender": "女",
+      "grade": "一年级",
+      "classes": "二班",
+      "parentName": "叶襄",
+      "parentPhoneNum": "138xxxxxx1234",
+      "id": 17
+    },
+    {
+      "name": "叶沁",
+      "birthday": "2015-06-13",
+      "address": "梅园1栋103",
+      "gender": "女",
+      "grade": "一年级",
+      "parentName": "叶襄",
+      "parentPhoneNum": "138xxxx1234",
+      "id": 18,
+      "classes": "二班"
+    }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "grade": "一年级",
+      "classes": "一班",
+      "masterTeacher": "鹿鸣",
+      "ChineseTeacher": "鹿鸣",
+      "mathTeacher": "佑友"
+    },
+    {
+      "id": 2,
+      "grade": "一年级",
+      "classes": "二班",
+      "masterTeacher": "佑友",
+      "ChineseTeacher": "鹿鸣",
+      "mathTeacher": "佑友"
+    }
+  ]
+}
