@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { Menu } from 'antd';
 import {Link} from 'react-router-dom'
-import img01 from "../img/img01.jpg";
+import img01 from "../../img/img01.jpg";
 import MenuConfig from '../config/menuConfig'
 
 class SideMenu extends Component{
 
+    // 动态创建侧边栏，数据是变化的，不能写死
     state={
         menuTree:[],
     };
 
+    // renderWillMount 组件将要挂载前
+    // 该生命周期方法在组件挂载后立即调用。一般用在进入页面后，数据初始化
     componentDidMount(){
         const menuTree = this.loadMenu(MenuConfig);
         this.setState({menuTree});

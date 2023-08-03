@@ -3,7 +3,7 @@ import { Breadcrumb, Button, Layout, Table, theme } from 'antd';
 import axios from 'axios';
 import SearchForm from '../forms/SearchForm';
 
-const { Content, Footer} = Layout;
+const {Content, Footer} = Layout;
 
 
 function Classes () {
@@ -62,7 +62,6 @@ function Classes () {
   } = theme.useToken();
 
   return (
-   
         <Layout>
             <Content
             style={{

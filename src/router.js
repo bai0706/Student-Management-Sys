@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter,Route} from "react-router-dom";
-import Home from './components/views/Home';
+import Login from './components/views/login';
 import App from './App'
-import Admin from './admin';
+import Home from './components/views/home';
 import StudentList from './components/content/Student';
 import Classes from './components/content/Classes';
 
@@ -13,11 +13,11 @@ class IRouter extends Component {
             <BrowserRouter>
             <App>
                 <Route path="/" render={()=>
-                    <Admin> 
-                        <Route path="/" exact component={Home}></Route> 
-                        <Route path="/admin/student/list" component={StudentList}></Route> 
-                        <Route path="/admin/class/table" component={Classes}></Route> 
-                    </Admin>
+                    <Home> 
+                        <Route path="/" exact component={Login}></Route> 
+                        <Route path="/student/list" component={StudentList}></Route> 
+                        <Route path="/class/table" component={Classes}></Route> 
+                    </Home>
                 }></Route>   
 
             </App>

@@ -15,12 +15,12 @@ const menuList = [
     },
     {
         title:"学生信息管理",
-        key: "/admin/student",
+        key: "/student",
         icon: <UserOutlined />,
         children :[
             {
                 title:"学生列表",
-                key: "/admin/student/list",   
+                key: "/student/list",   
             },
         ],
     },
@@ -36,7 +36,7 @@ const menuList = [
         children:[
             {
                 title:"班级列表",
-                key: "/admin/class/table",
+                key: "/class/table",
             },
         ],
     },

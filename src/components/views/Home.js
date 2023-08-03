@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
+import {Row, Col} from 'antd';
+import SideMenu from "./SideMenu"
 import "../../style/common.css"
 
 class Home extends Component{
     render(){
         return(
-        <div>
-            <p className='home-style'>欢迎访问学生教学管理系统</p>
-        </div>
+            <div>
+                <Row className='container'>
+                    <Col span={3} className='nav-left'>
+                        <SideMenu />
+                    </Col>
+                    <Col span={21} className='main'>
+                        <Row className='content'>
+                            {this.props.children}
+                        </Row>
+                    </Col> 
+                </Row>
+            </div>
         );
     }
 }

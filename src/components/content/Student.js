@@ -5,6 +5,7 @@ import MyForm from '../forms/MyForm';
 import moment from 'moment';
 
 
+  // Content和Footer是从Layout中解构出来的
   const { Content, Footer} = Layout;
   const { confirm } = Modal;
   
@@ -12,6 +13,7 @@ import moment from 'moment';
 // 展示列表并删除数据
 export default function StudentList(){
 
+  // const [state, setState] = useState(false);    [状态，改变状态的唯一方法，初始值为false]
   const [dataSource, setDataSource] = useState([]);
   const [isUpdateVisible, setIsUpdateVisible] = useState(false)
   const [isAddVisible, setIsAddVisible] = useState(false);
@@ -79,14 +81,14 @@ export default function StudentList(){
     ];
 
     const confirmMethod = (item) => {
-      confirm({
-          title: '你确定要删除?',
-          onOk() {
-              deleteMethod(item)
-          },
-          onCancel() {
-          },
-      });
+        confirm({
+            title: '你确定要删除?',
+            onOk() {
+                deleteMethod(item)
+            },
+            onCancel() {
+            },
+        });
     }
 
     const handleCancle = () =>{
@@ -128,8 +130,6 @@ export default function StudentList(){
     }
 
     const handleUpdate = async(item) => {
-      console.log(item.name)
-
       await setIsUpdateVisible(true)
       const date = item.birthday;
       item.birthday = moment(date)
@@ -141,7 +141,6 @@ export default function StudentList(){
 
     // 导出db文件为txt
     const handleConvertToTxt = () => {
-  
       // Convert the JSON data to a string
       const jsonString = JSON.stringify(dataSource, null, 2);
   
@@ -163,50 +162,50 @@ export default function StudentList(){
     } = theme.useToken();
 
     return (
-   
       <Layout>
           <Content
-          style={{
-              margin: '0 16px',
-          }}
-          >
-          <Breadcrumb
               style={{
-              margin: '16px 0',
+                  margin: '0 16px',
               }}
           >
-              <Breadcrumb.Item>学生信息列表</Breadcrumb.Item>
-              <Breadcrumb.Item>学生列表</Breadcrumb.Item>
-          </Breadcrumb>
-          <div
-              style={{
-              padding: 24,
-              minHeight: 360,
-              background: colorBgContainer,
-              }}
-          >
-            
-            <Button style={{marginRight:15,marginLeft:-1300,marginBottom:20}} type="primary" onClick={() =>{setIsAddVisible(true)}}>
-              新增
-            </Button>
-            <Button className='button-style' type="primary" onClick={() =>{handleConvertToTxt(true)}}>导出</Button>
-            <Modal title="添加学生信息" open={isAddVisible} onOk={() => addFormOK()} onCancel={() => handleCancle()}>
-                <MyForm ref={addForm}/>
-            </Modal>
-            <Table dataSource={dataSource} columns={columns}  pagination={{ pageSize: 500, }} scroll={{ y: 300, }}></Table>
-            <Modal title="修改学生信息" open={isUpdateVisible} onOk={() => updateOk()} onCancel={() => handleCancle()}>
-                <MyForm ref={updateForm}/>
-            </Modal>
-          </div>
+              <Breadcrumb
+                  style={{
+                  margin: '16px 0',
+                  }}
+              >
+                  <Breadcrumb.Item>学生信息列表</Breadcrumb.Item>
+                  <Breadcrumb.Item>学生列表</Breadcrumb.Item>
+              </Breadcrumb>
+              <div
+                  style={{
+                  padding: 24,
+                  minHeight: 360,
+                  background: colorBgContainer,
+                  }}
+              >
+                
+                <Button style={{marginRight:15,marginLeft:-1300,marginBottom:20}} type="primary" onClick={() =>{setIsAddVisible(true)}}>
+                  新增
+                </Button>
+                <Button className='button-style' type="primary" onClick={() =>{handleConvertToTxt(true)}}>导出</Button>
+
+                <Modal title="添加学生信息" open={isAddVisible} onOk={() => addFormOK()} onCancel={() => handleCancle()}>
+                    <MyForm ref={addForm}/>
+                </Modal>
+                <Table dataSource={dataSource} columns={columns}  pagination={{ pageSize: 500, }} scroll={{ y: 300, }}></Table>
+                <Modal title="修改学生信息" open={isUpdateVisible} onOk={() => updateOk()} onCancel={() => handleCancle()}>
+                    <MyForm ref={updateForm}/>
+                </Modal>
+              </div>
           </Content>
           <Footer
-          style={{
-              textAlign: 'center',
-          }}
-          >
-          Ant Design ©2023 Created by Ant UED
+              style={{
+                  textAlign: 'center',
+              }}
+              >
+              Ant Design ©2023 Created by Ant UED
           </Footer>
       </Layout>
-);
+    );
 }
 
