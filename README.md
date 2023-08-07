@@ -29,6 +29,14 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-###启动项目前:
+
+### `搭建脚手架`
+
+全局安装：npm i -g create-react-app
+切换到想创项目的目录，使用命令：create-react-app 项目名称
+启动项目： npm start
+
+
+### `启动项目前`
 启动db.json文件，文件目录下cmd:
 json-server --watch .\db.json --port 8000
